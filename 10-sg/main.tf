@@ -13,10 +13,10 @@
 # } 
 
 
-module "sg" {
+module "sg_tags" {
   #count = length(var.sg_names)
   #source = "git::https://github.com/SrikanthErugula/terraform-AWS-VPC-module.git"
-  source = "git ::https://github.com/SrikanthErugula/custum-aws-sg.git?ref=main"
+  source = "git::https://github.com/SrikanthErugula/custum-aws-sg.git?ref=main"
   project_name = var.project_name
   environment = var.environment
   #sg_name = var.sg_names[count.index]
