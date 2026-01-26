@@ -2,26 +2,29 @@
 # Using Open source module
 #https://github.com/terraform-aws-modules/terraform-aws-security-group/blob/master/README.md
  
- module "catalogue" {
-  source = "terraform-aws-modules/security-group/aws"
+#  module "catalogue" {
+#   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "${local.common_name_suffix}-catalogue"
-  use_name_prefix = false # true vunte vere name will come
-  description = "Security group for catalogue with custom ports open within VPC, egress all traffic"
-  vpc_id      = data.aws_ssm_parameter.vpc_id.value # comes from data.tf
+#   name        = "${local.common_name_suffix}-catalogue"
+#   use_name_prefix = false # true vunte vere name will come
+#   description = "Security group for catalogue with custom ports open within VPC, egress all traffic"
+#   vpc_id      = data.aws_ssm_parameter.vpc_id.value # comes from data.tf
 
-} 
+# } 
 
 
-# module "sg" {
-#   count = length(var.sg_names)
-#   source = "git::https://github.com/SrikanthErugula/terraform-AWS-VPC-module.git"
-#   project_name = var.project_name
-#   environment = var.environment
-#   sg_name = var.sg_names[count.index]
-#   sg_description = "Created for ${var.sg_names[count.index]}"
-#   vpc_id =  local.vpc_id
-# }
+module "sg" {
+  #count = length(var.sg_names)
+  #source = "git::https://github.com/SrikanthErugula/terraform-AWS-VPC-module.git"
+  source = "git ::https://github.com/SrikanthErugula/custum-aws-sg.git?ref=main"
+  project_name = var.project_name
+  environment = var.environment
+  #sg_name = var.sg_names[count.index]
+  sg_name = "mongodb"
+  #sg_description = "Created for ${var.sg_names[count.index]}"
+  sg_description = "Created for mongodb"
+  vpc_id =  local.vpc_id
+}
 
 # Frontend accepting traffic from frontend ALB
 # resource "aws_security_group_rule" "frontend_frontend_alb" {
