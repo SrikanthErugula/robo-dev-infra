@@ -13,16 +13,16 @@
 # } 
 
 
-module "sg_tags" {
-  #count = length(var.sg_names)
-  #source = "git::https://github.com/SrikanthErugula/terraform-AWS-VPC-module.git"
-  source = "git::https://github.com/SrikanthErugula/custum-aws-sg.git?ref=main"
+module "sg" {
+  count = length(var.sg_names)
+  source = "git::https://github.com/SrikanthErugula/custum-aws-sg.git"
+  #source = "git::https://github.com/SrikanthErugula/custum-aws-sg.git?ref=main"
   project_name = var.project_name
   environment = var.environment
-  #sg_name = var.sg_names[count.index]
-  sg_name = "mongodb"
-  #sg_description = "Created for ${var.sg_names[count.index]}"
-  sg_description = "Created for mongodb"
+  sg_name = var.sg_names[count.index]
+  #sg_name = "mongodb" ila vunte adhi hardcode 
+  sg_description = "Created for ${var.sg_names[count.index]}"
+  #sg_description = "Created for mongodb"
   vpc_id =  local.vpc_id
 }
 
