@@ -5,7 +5,7 @@ module "vpc_test" {
 
 
    # VPC
-    vpc_cidr = var.vpc_test_cidr
+    vpc_cidr = var.vpc_test_cidr # must comes from users 
     project_name = var.project_name
     environment = var.environment
     vpc_tags = var.vpc_test_tags
