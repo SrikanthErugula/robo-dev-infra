@@ -27,6 +27,7 @@ resource "aws_lb_listener" "backend_alb" {
   port              = "80"
   protocol          = "HTTP"
 
+# the below is for fixed respose means inka team anedhi create avvaldhu so we have to give like this
   default_action {
     type = "fixed-response"
 
