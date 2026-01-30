@@ -29,13 +29,13 @@ module "sg" {
 # Frontend (idi separate refer in varibl.tf lo db,backend laga front kuda oka component)accepting traffic 
 #from frontend ALB ( idi different refer in varibkle.tf ) --> this for tight creating  sg 
 
-resource "aws_security_group_rule" "frontend_frontend_alb" {
-  type              = "ingress"
-  security_group_id = module.sg[9].sg_id             # frontend SG ID   ---- # destination 
-  source_security_group_id = module.sg[11].sg_id     # frontend ALB SG ID ---> # source
-  from_port         = 80
-  protocol          = "tcp"
-  to_port           = 80
-}
+# resource "aws_security_group_rule" "frontend_frontend_alb" {
+#   type              = "ingress"
+#   security_group_id = module.sg[9].sg_id             # frontend SG ID   ---- # destination 
+#   source_security_group_id = module.sg[11].sg_id     # frontend ALB SG ID ---> # source
+#   from_port         = 80
+#   protocol          = "tcp"
+#   to_port           = 80
+# }
 
-# the above is for manula purpose we have written 
+# the above is for manula purpose we have written ....after this frnt sg will have frnt_lb check
