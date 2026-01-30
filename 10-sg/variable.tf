@@ -8,18 +8,18 @@ variable "environment" {
 
 variable "sg_names" {
     default = [
-        # databases
+        # for databases
         "mongodb", "redis", "mysql", "rabbitmq",
-        # backend
+        #  for backend
         "catalogue", "user", "cart", "shipping", "payment",
         # frontend
         "frontend",
         # bastion
         "bastion",
-        # frontend load balancer
-        "frontend_alb",
-        # Backend ALB
-        "backend_alb",
-        # "open_vpn"
+        # # frontend load balancer
+        # "frontend_alb",
+        # # Backend ALB
+        # "backend_alb",
+        # # "open_vpn"
     ]
 }
