@@ -1,7 +1,7 @@
-# variable "project_name" {
-#     default = "roboshop"
-# }
+variable "project_name" {
+    default = "roboshop"
+}
 
-# variable "environment" {
-#     default = "dev"
-# }
+variable "environment" {
+    default = "dev"
+}
