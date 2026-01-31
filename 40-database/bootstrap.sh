@@ -1,4 +1,13 @@
-# #!/bin/bash
+#!/bin/bash
+
+# dnf install ansible -y
+# ansible-pull -U 
+
+
+
+
+
+
 
 # component=$1
 # environment=$2
